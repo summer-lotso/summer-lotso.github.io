@@ -3,7 +3,7 @@
   "groups": [
     {
       "condition": "original_paired",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "rounds": 10,
       "place_success": 10,
       "return_executed": 10,
@@ -15,7 +15,7 @@
     },
     {
       "condition": "original_paired",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "rounds": 10,
       "place_success": 9,
       "return_executed": 9,
@@ -27,7 +27,7 @@
     },
     {
       "condition": "new_bottle",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "rounds": 4,
       "place_success": 4,
       "return_executed": 4,
@@ -39,7 +39,7 @@
     },
     {
       "condition": "new_bottle",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "rounds": 4,
       "place_success": 4,
       "return_executed": 4,
@@ -51,7 +51,7 @@
     },
     {
       "condition": "new_bottle_2",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "rounds": 4,
       "place_success": 4,
       "return_executed": 4,
@@ -63,7 +63,7 @@
     },
     {
       "condition": "new_bottle_2",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "rounds": 4,
       "place_success": 4,
       "return_executed": 4,
@@ -75,7 +75,7 @@
     },
     {
       "condition": "raised_start",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "rounds": 1,
       "place_success": 0,
       "return_executed": 0,
@@ -87,7 +87,7 @@
     },
     {
       "condition": "raised_start",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "rounds": 1,
       "place_success": 0,
       "return_executed": 0,
@@ -100,5 +100,9 @@
   ],
   "unit": "rounds and actual stages are distinct",
   "protocol": "home and operator initiation between place and return",
-  "interpretation": "exploration; operator-reported unseen bottles; raw/adjudicated task completion and execution fault remain separate"
+  "interpretation": "exploration; operator-reported unseen bottles; raw/adjudicated task completion and execution fault remain separate",
+  "model_label_correction": {
+    "date": "2026-11-08",
+    "scope": "Published experiment records. The project owner corrected the attribution of pi0 and pi0_latent_wam. Trial outcomes and measurements are preserved."
+  }
 }
