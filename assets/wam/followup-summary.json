@@ -27,7 +27,7 @@
     },
     {
       "condition": "new_bottle",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "rounds": 4,
       "place_success": 4,
       "return_executed": 4,
@@ -39,7 +39,7 @@
     },
     {
       "condition": "new_bottle",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "rounds": 4,
       "place_success": 4,
       "return_executed": 4,
@@ -51,7 +51,7 @@
     },
     {
       "condition": "new_bottle_2",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "rounds": 4,
       "place_success": 4,
       "return_executed": 4,
@@ -63,7 +63,7 @@
     },
     {
       "condition": "new_bottle_2",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "rounds": 4,
       "place_success": 4,
       "return_executed": 4,
@@ -72,30 +72,6 @@
       "pair_raw_success": 4,
       "pair_effective_success": 4,
       "faulted_stages": 0
-    },
-    {
-      "condition": "raised_start",
-      "model": "pi0_latent_wam",
-      "rounds": 1,
-      "place_success": 0,
-      "return_executed": 0,
-      "return_raw_success": 0,
-      "return_effective_success": 0,
-      "pair_raw_success": 0,
-      "pair_effective_success": 0,
-      "faulted_stages": 1
-    },
-    {
-      "condition": "raised_start",
-      "model": "pi0",
-      "rounds": 1,
-      "place_success": 0,
-      "return_executed": 0,
-      "return_raw_success": 0,
-      "return_effective_success": 0,
-      "pair_raw_success": 0,
-      "pair_effective_success": 0,
-      "faulted_stages": 1
     }
   ],
   "unit": "rounds and actual stages are distinct",
@@ -103,6 +79,6 @@
   "interpretation": "exploration; operator-reported unseen bottles; raw/adjudicated task completion and execution fault remain separate",
   "model_label_correction": {
     "date": "2026-11-08",
-    "scope": "Published experiment records. The project owner corrected the attribution of pi0 and pi0_latent_wam. Trial outcomes and measurements are preserved."
+    "scope": "The project owner confirmed separate model attributions for the original-bottle paired trials and the two novel-bottle conditions. This export covers these three completed conditions."
   }
 }

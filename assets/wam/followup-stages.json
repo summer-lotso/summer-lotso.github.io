@@ -473,7 +473,7 @@
     {
       "condition": "new_bottle",
       "id": "d7d49b1cd6524416",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -485,7 +485,7 @@
     {
       "condition": "new_bottle",
       "id": "3efabc3d7dad441f",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_return",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -497,7 +497,7 @@
     {
       "condition": "new_bottle",
       "id": "6c0f1ce5e7dd43c4",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -509,7 +509,7 @@
     {
       "condition": "new_bottle",
       "id": "07d82f41e01d4008",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_return",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -521,7 +521,7 @@
     {
       "condition": "new_bottle",
       "id": "eaa9b47c714e4be0",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -533,7 +533,7 @@
     {
       "condition": "new_bottle",
       "id": "eb2f850f93e54c8d",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_return",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -545,7 +545,7 @@
     {
       "condition": "new_bottle",
       "id": "09a1a826fc584e92",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -557,7 +557,7 @@
     {
       "condition": "new_bottle",
       "id": "8ab16c02a3fd4dda",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_return",
       "raw_outcome": "failure",
       "effective_outcome": "failure",
@@ -569,7 +569,7 @@
     {
       "condition": "new_bottle",
       "id": "a8493da94aae4844",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -581,7 +581,7 @@
     {
       "condition": "new_bottle",
       "id": "f61cc0779c5b403a",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_return",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -593,7 +593,7 @@
     {
       "condition": "new_bottle",
       "id": "e13a9a03623f4166",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -605,7 +605,7 @@
     {
       "condition": "new_bottle",
       "id": "ba4c19dfd2784bb9",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_return",
       "raw_outcome": "failure",
       "effective_outcome": "success",
@@ -617,7 +617,7 @@
     {
       "condition": "new_bottle",
       "id": "8e799be04cdd4d58",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -629,7 +629,7 @@
     {
       "condition": "new_bottle",
       "id": "4d9d836987274e47",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_return",
       "raw_outcome": "failure",
       "effective_outcome": "success",
@@ -641,7 +641,7 @@
     {
       "condition": "new_bottle",
       "id": "0f1a1ac350054372",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -653,7 +653,7 @@
     {
       "condition": "new_bottle",
       "id": "921e047d2f434324",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_return",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -663,33 +663,9 @@
       "round_id": "cd0085f6478c4941"
     },
     {
-      "condition": "raised_start",
-      "id": "ec27930e00d84442",
-      "model": "pi0",
-      "task_id": "bottom_place",
-      "raw_outcome": "failure",
-      "effective_outcome": "failure",
-      "operator_adjudicated": false,
-      "fault_count": 4,
-      "parent_trial_id": null,
-      "round_id": "046485e4abc34a94"
-    },
-    {
-      "condition": "raised_start",
-      "id": "067a9c01816d4572",
-      "model": "pi0_latent_wam",
-      "task_id": "bottom_place",
-      "raw_outcome": "failure",
-      "effective_outcome": "failure",
-      "operator_adjudicated": false,
-      "fault_count": 3,
-      "parent_trial_id": null,
-      "round_id": "46f1b060af084b58"
-    },
-    {
       "condition": "new_bottle_2",
       "id": "091ac447bed24b19",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -701,7 +677,7 @@
     {
       "condition": "new_bottle_2",
       "id": "3b5392e674b045a7",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_return",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -713,7 +689,7 @@
     {
       "condition": "new_bottle_2",
       "id": "a9a6050e02804512",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -725,7 +701,7 @@
     {
       "condition": "new_bottle_2",
       "id": "928b850fc9a342b3",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_return",
       "raw_outcome": "failure",
       "effective_outcome": "failure",
@@ -737,7 +713,7 @@
     {
       "condition": "new_bottle_2",
       "id": "5aa26919e46342fd",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -749,7 +725,7 @@
     {
       "condition": "new_bottle_2",
       "id": "57f411db23e64472",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_return",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -761,7 +737,7 @@
     {
       "condition": "new_bottle_2",
       "id": "e9d8e7520a1649bb",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -773,7 +749,7 @@
     {
       "condition": "new_bottle_2",
       "id": "0dd44348389b409c",
-      "model": "pi0_latent_wam",
+      "model": "pi0",
       "task_id": "bottom_return",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -785,7 +761,7 @@
     {
       "condition": "new_bottle_2",
       "id": "068380c672ba4f3f",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -797,7 +773,7 @@
     {
       "condition": "new_bottle_2",
       "id": "c3d9f9bef33e4d3e",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_return",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -809,7 +785,7 @@
     {
       "condition": "new_bottle_2",
       "id": "edcfd051f6894a4a",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -821,7 +797,7 @@
     {
       "condition": "new_bottle_2",
       "id": "a8493186359d42b0",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_return",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -833,7 +809,7 @@
     {
       "condition": "new_bottle_2",
       "id": "f58d1199a57b4c57",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -845,7 +821,7 @@
     {
       "condition": "new_bottle_2",
       "id": "479bc23fe5cf47be",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_return",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -857,7 +833,7 @@
     {
       "condition": "new_bottle_2",
       "id": "0790284bef5c4510",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_place",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -869,7 +845,7 @@
     {
       "condition": "new_bottle_2",
       "id": "f9134a4bd8f6477d",
-      "model": "pi0",
+      "model": "pi0_latent_wam",
       "task_id": "bottom_return",
       "raw_outcome": "success",
       "effective_outcome": "success",
@@ -881,6 +857,6 @@
   ],
   "model_label_correction": {
     "date": "2026-11-08",
-    "scope": "Published experiment records. The project owner corrected the attribution of pi0 and pi0_latent_wam. Trial outcomes and measurements are preserved."
+    "scope": "The project owner confirmed separate model attributions for the original-bottle paired trials and the two novel-bottle conditions. This export covers these three completed conditions."
   }
 }
