@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-01",
+  "groups": [
+    {
+      "condition": "original_paired",
+      "model": "pi0",
+      "rounds": 10,
+      "place_success": 10,
+      "return_executed": 10,
+      "return_raw_success": 8,
+      "return_effective_success": 8,
+      "pair_raw_success": 8,
+      "pair_effective_success": 8,
+      "faulted_stages": 0
+    },
+    {
+      "condition": "original_paired",
+      "model": "pi0_latent_wam",
+      "rounds": 10,
+      "place_success": 9,
+      "return_executed": 9,
+      "return_raw_success": 7,
+      "return_effective_success": 7,
+      "pair_raw_success": 7,
+      "pair_effective_success": 7,
+      "faulted_stages": 0
+    },
+    {
+      "condition": "new_bottle",
+      "model": "pi0",
+      "rounds": 4,
+      "place_success": 4,
+      "return_executed": 4,
+      "return_raw_success": 3,
+      "return_effective_success": 3,
+      "pair_raw_success": 3,
+      "pair_effective_success": 3,
+      "faulted_stages": 1
+    },
+    {
+      "condition": "new_bottle",
+      "model": "pi0_latent_wam",
+      "rounds": 4,
+      "place_success": 4,
+      "return_executed": 4,
+      "return_raw_success": 2,
+      "return_effective_success": 4,
+      "pair_raw_success": 2,
+      "pair_effective_success": 4,
+      "faulted_stages": 2
+    },
+    {
+      "condition": "new_bottle_2",
+      "model": "pi0",
+      "rounds": 4,
+      "place_success": 4,
+      "return_executed": 4,
+      "return_raw_success": 3,
+      "return_effective_success": 3,
+      "pair_raw_success": 3,
+      "pair_effective_success": 3,
+      "faulted_stages": 0
+    },
+    {
+      "condition": "new_bottle_2",
+      "model": "pi0_latent_wam",
+      "rounds": 4,
+      "place_success": 4,
+      "return_executed": 4,
+      "return_raw_success": 4,
+      "return_effective_success": 4,
+      "pair_raw_success": 4,
+      "pair_effective_success": 4,
+      "faulted_stages": 0
+    },
+    {
+      "condition": "raised_start",
+      "model": "pi0",
+      "rounds": 1,
+      "place_success": 0,
+      "return_executed": 0,
+      "return_raw_success": 0,
+      "return_effective_success": 0,
+      "pair_raw_success": 0,
+      "pair_effective_success": 0,
+      "faulted_stages": 1
+    },
+    {
+      "condition": "raised_start",
+      "model": "pi0_latent_wam",
+      "rounds": 1,
+      "place_success": 0,
+      "return_executed": 0,
+      "return_raw_success": 0,
+      "return_effective_success": 0,
+      "pair_raw_success": 0,
+      "pair_effective_success": 0,
+      "faulted_stages": 1
+    }
+  ],
+  "unit": "rounds and actual stages are distinct",
+  "protocol": "home and operator initiation between place and return",
+  "interpretation": "exploration; operator-reported unseen bottles; raw/adjudicated task completion and execution fault remain separate"
+}
