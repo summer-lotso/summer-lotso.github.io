@@ -63,12 +63,34 @@
 
         <div class="story-block"><div class="block-label">BEYOND OPENPI<span>新增与适配</span></div><div class="addition-grid"><section><span class="addition-no">01</span><h3>xArm7＋XHand1 数据与动作适配</h3><p>对齐三路 RGB、任务语言与臂手状态；提取 7＋12 维关节量，处理机械臂相对动作、手部绝对目标、归一化及模型维度补齐。</p></section><section><span class="addition-no">02</span><h3>未来视觉监督链路</h3><p>增加未来光流计算、视频注册与 LeRobot 读取路径；通过冻结 VAE、投影和注意力压缩，为 Teacher 构造未来视觉 tokens。</p></section><section><span class="addition-no">03</span><h3>双分支动作训练与蒸馏</h3><p>增加 Teacher action expert、Student queries 与特征投影器；联合动作流匹配和多层余弦蒸馏，以 attention mask 控制信息可见性。</p></section><section><span class="addition-no">04</span><h3>训练配置与评估工具</h3><p>接入四任务示教数据，完成 π₀、WAM 与 π₀.₅ 的统一训练与导出；整理初始化映射、四卡训练和部署包身份核对。</p></section></div></div>
 
-        <figure class="architecture" id="wam-method" aria-labelledby="architecture-caption">
-          <div class="architecture-top"><span class="eyebrow">TRAINING</span><span>共享视觉语言前缀</span><p>当前 RGB ＋ 语言指令 <span aria-hidden="true">→</span> 视觉语言编码</p></div>
-          <div class="architecture-branches"><section class="architecture-branch teacher"><div class="branch-heading"><span class="branch-letter">T</span><h3>Teacher</h3><span class="branch-note">训练期</span></div><div class="branch-input"><span>真实未来光流</span><span aria-hidden="true">↓</span><span>冻结 VAE ＋ 注意力压缩</span><span aria-hidden="true">↓</span><strong>16 个未来视觉 tokens</strong></div><div class="expert-node">状态 ＋ 带噪动作 → Action Expert</div><span class="branch-loss">Teacher action loss</span></section><section class="architecture-branch student"><div class="branch-heading"><span class="branch-letter">S</span><h3>Student</h3><span class="branch-note">训练与推理</span></div><div class="branch-input"><span>当前观测条件</span><span aria-hidden="true">↓</span><span>可学习的未来查询</span><span aria-hidden="true">↓</span><strong>16 个 learned queries</strong></div><div class="expert-node">状态 ＋ 带噪动作 → Action Expert</div><span class="branch-loss">Student action loss</span></section></div>
-          <div class="distillation"><span>Teacher 中间表示</span><span class="distillation-arrow" aria-hidden="true">→</span><strong>多层特征蒸馏</strong><span class="distillation-arrow" aria-hidden="true">→</span><span>Student 表示</span><small>Teacher 目标侧停止梯度 · 分支间 attention 隔离</small></div>
-          <div class="inference"><span class="eyebrow">INFERENCE</span><p>当前图像、语言与状态 <span aria-hidden="true">→</span> <strong>Student</strong> <span aria-hidden="true">→</span> 动作序列</p></div>
-          <figcaption id="architecture-caption">训练使用未来监督；动作采样只运行 Student，无需真实未来图像或光流。</figcaption>
+        <figure class="wam-method-figure" id="wam-method" aria-labelledby="wam-method-title">
+          <header class="wam-method-heading">
+            <h3 id="wam-method-title">π₀ Latent WAM 的训练与部署</h3>
+            <a href="assets/wam/wam-method-full.webp">查看高清全图 <span aria-hidden="true">↗</span></a>
+          </header>
+          <a class="wam-method-overview" href="assets/wam/wam-method-full.webp" aria-label="放大查看 π₀ Latent WAM 完整架构图">
+            <img src="assets/wam/wam-method-overview.webp" width="2280" height="896" loading="lazy" decoding="async" alt="左图为共享视觉语言前缀的双分支训练，右上为教师的未来光流编码，右下为学生在真机上的动作采样。">
+          </a>
+          <figcaption>
+            <div class="wam-method-panels">
+              <div>
+                <h4>（a）教师与学生如何训练</h4>
+                <a class="wam-method-detail" href="assets/wam/wam-method-training.webp" aria-label="放大双分支训练图"><img src="assets/wam/wam-method-training.webp" width="1320" height="926" loading="lazy" alt="教师接收光流 token，学生使用可学习的查询。两个动作专家分别预测动作速度场。"></a>
+                <p>两分支共享三路当前 RGB 和指令的编码。学生在层索引 8、12、16（从 0 计数）对齐教师表征。仅蒸馏目标停止梯度，教师仍通过动作损失更新。</p>
+              </div>
+              <div>
+                <h4>（b）未来光流从哪里来</h4>
+                <a class="wam-method-detail" href="assets/wam/wam-method-flow.webp" aria-label="放大未来光流编码图"><img src="assets/wam/wam-method-flow.webp" width="1320" height="581" loading="lazy" alt="头部和腕部各取相隔 32 帧的一对训练图像，输入 RAFT 估计光流。"></a>
+                <p>RAFT 分别估计头部、腕部视角在 1.6 秒内的运动。两路光流经冻结的 SDXL-VAE 编码，再经投影和注意力池化，合计得到 16 个教师 token。</p>
+              </div>
+              <div>
+                <h4>（c）真机如何生成动作</h4>
+                <a class="wam-method-detail" href="assets/wam/wam-method-deployment.webp" aria-label="放大真机部署图"><img src="assets/wam/wam-method-deployment.webp" width="1320" height="595" loading="lazy" alt="当前图像、指令和关节状态输入学生策略，采样结果解码为臂手的绝对关节目标。"></a>
+                <p>部署时只运行学生策略。默认 10 次流匹配积分，解码出 32 个时间步的 19 维关节目标。每一步的 7 维臂部增量都相对同一帧实测关节角还原。</p>
+              </div>
+            </div>
+            <p class="wam-method-source">（a）为同一次真机观测的三路实拍；（b）为训练片段 0 的第 450、482 帧，彩色光流块为示意。<a href="https://github.com/summer-lotso/xarm7-xhand1-pi0-wam/blob/67ff84e3c6c47f09a492e54d365534ea64ab90fa/docs/assets/pi0_latent_wam_real_views.md">原始相机帧与图稿说明 <span aria-hidden="true">↗</span></a></p>
+          </figcaption>
         </figure>
 
 
