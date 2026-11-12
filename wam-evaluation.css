@@ -19,43 +19,13 @@
 .wam-transfer-layout>div,.wam-transfer-film{min-width:0}
 @media(max-width:540px){.wam-followup .wam-record-scroll .wam-record-table{min-width:0;table-layout:fixed;width:100%}.wam-followup .wam-record-table th,.wam-followup .wam-record-table td{font-size:10px;padding:10px 4px;overflow-wrap:anywhere}}
 
-/* Architecture figure: keep the overview on wide screens and pair each
-   original panel with its explanation at narrow widths. */
-.wam-method-figure {
-  scroll-margin-top: 28px;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  background: #fff;
-}
-.wam-method-heading {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 6px 20px;
-  padding: 18px 22px;
-}
-.wam-method-heading h3 { font-size: clamp(18px, 2vw, 24px); line-height: 1.4; }
-.wam-method-heading a { color: var(--olive); text-decoration: underline; text-underline-offset: 3px; }
-.wam-method-heading a { font-size: 13px; }
-.wam-method-overview { display: block; padding: 0 6px; cursor: zoom-in; }
-.wam-method-figure img { width: 100%; height: auto; }
-.wam-method-detail { display: none; }
-.wam-method-panels {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  padding: 18px 22px;
-}
-.wam-method-panels h4 { margin-bottom: 6px; font-size: 15px; line-height: 1.5; }
-.wam-method-panels p { font-size: 14px; line-height: 1.75; }
-.wam-method-source { border-top: 1px solid var(--line); padding: 12px 22px; font-size: 12px; color: var(--muted); }
-@media (max-width: 800px) {
-  .wam-method-heading { padding: 16px; border-bottom: 1px solid var(--line); }
-  .wam-method-overview { display: none; }
-  .wam-method-panels { grid-template-columns: 1fr; gap: 0; padding: 0; }
-  .wam-method-panels > div { padding: 16px; }
-  .wam-method-panels > div + div { border-top: 1px solid var(--line); }
-  .wam-method-detail { display: block; margin: 9px 0; cursor: zoom-in; }
-  .wam-method-source { padding-inline: 16px; }
+/* Keep the architecture plate on the section's paper background. */
+.wam-architecture { margin-top: 38px; scroll-margin-top: 28px; }
+.wam-architecture a { display: block; cursor: zoom-in; }
+.wam-architecture picture,
+.wam-architecture img { display: block; width: 100%; }
+.wam-architecture img { height: auto; aspect-ratio: 1120 / 602; }
+@media (max-width: 700px) {
+  .wam-architecture { margin-top: 28px; }
+  .wam-architecture img { aspect-ratio: 548 / 1144; }
 }

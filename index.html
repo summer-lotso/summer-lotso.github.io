@@ -63,34 +63,13 @@
 
         <div class="story-block"><div class="block-label">BEYOND OPENPI<span>新增与适配</span></div><div class="addition-grid"><section><span class="addition-no">01</span><h3>xArm7＋XHand1 数据与动作适配</h3><p>对齐三路 RGB、任务语言与臂手状态；提取 7＋12 维关节量，处理机械臂相对动作、手部绝对目标、归一化及模型维度补齐。</p></section><section><span class="addition-no">02</span><h3>未来视觉监督链路</h3><p>增加未来光流计算、视频注册与 LeRobot 读取路径；通过冻结 VAE、投影和注意力压缩，为 Teacher 构造未来视觉 tokens。</p></section><section><span class="addition-no">03</span><h3>双分支动作训练与蒸馏</h3><p>增加 Teacher action expert、Student queries 与特征投影器；联合动作流匹配和多层余弦蒸馏，以 attention mask 控制信息可见性。</p></section><section><span class="addition-no">04</span><h3>训练配置与评估工具</h3><p>接入四任务示教数据，完成 π₀、WAM 与 π₀.₅ 的统一训练与导出；整理初始化映射、四卡训练和部署包身份核对。</p></section></div></div>
 
-        <figure class="wam-method-figure" id="wam-method" aria-labelledby="wam-method-title">
-          <header class="wam-method-heading">
-            <h3 id="wam-method-title">π₀ Latent WAM 的训练与部署</h3>
-            <a href="assets/wam/wam-method-full.webp">查看高清全图 <span aria-hidden="true">↗</span></a>
-          </header>
-          <a class="wam-method-overview" href="assets/wam/wam-method-full.webp" aria-label="放大查看 π₀ Latent WAM 完整架构图">
-            <img src="assets/wam/wam-method-overview.webp" width="2280" height="896" loading="lazy" decoding="async" alt="左图为共享视觉语言前缀的双分支训练，右上为教师的未来光流编码，右下为学生在真机上的动作采样。">
+        <figure id="wam-method" class="wam-architecture">
+          <a href="assets/wam/wam-method-full.webp" aria-label="放大查看 π₀ Latent WAM 原始架构图">
+            <picture>
+              <source media="(max-width: 700px)" srcset="assets/wam/wam-architecture.svg#portrait" width="548" height="1144">
+              <img src="assets/wam/wam-architecture.svg" width="1120" height="602" loading="lazy" decoding="async" alt="π₀ Latent WAM 架构：训练时以未来光流监督教师，学生对齐其表征；部署时仅用学生预测臂手动作。">
+            </picture>
           </a>
-          <figcaption>
-            <div class="wam-method-panels">
-              <div>
-                <h4>（a）教师与学生如何训练</h4>
-                <a class="wam-method-detail" href="assets/wam/wam-method-training.webp" aria-label="放大双分支训练图"><img src="assets/wam/wam-method-training.webp" width="1320" height="926" loading="lazy" alt="教师接收光流 token，学生使用可学习的查询。两个动作专家分别预测动作速度场。"></a>
-                <p>两分支共享三路当前 RGB 和指令的编码。学生在层索引 8、12、16（从 0 计数）对齐教师表征。仅蒸馏目标停止梯度，教师仍通过动作损失更新。</p>
-              </div>
-              <div>
-                <h4>（b）未来光流从哪里来</h4>
-                <a class="wam-method-detail" href="assets/wam/wam-method-flow.webp" aria-label="放大未来光流编码图"><img src="assets/wam/wam-method-flow.webp" width="1320" height="581" loading="lazy" alt="头部和腕部各取相隔 32 帧的一对训练图像，输入 RAFT 估计光流。"></a>
-                <p>RAFT 分别估计头部、腕部视角在 1.6 秒内的运动。两路光流经冻结的 SDXL-VAE 编码，再经投影和注意力池化，合计得到 16 个教师 token。</p>
-              </div>
-              <div>
-                <h4>（c）真机如何生成动作</h4>
-                <a class="wam-method-detail" href="assets/wam/wam-method-deployment.webp" aria-label="放大真机部署图"><img src="assets/wam/wam-method-deployment.webp" width="1320" height="595" loading="lazy" alt="当前图像、指令和关节状态输入学生策略，采样结果解码为臂手的绝对关节目标。"></a>
-                <p>部署时只运行学生策略。默认 10 次流匹配积分，解码出 32 个时间步的 19 维关节目标。每一步的 7 维臂部增量都相对同一帧实测关节角还原。</p>
-              </div>
-            </div>
-            <p class="wam-method-source">（a）取自同一次真机观测的三路实拍。（b）取自训练片段 0 的第 450、482 帧。腕部图像为展示而旋转，彩色光流块为示意。</p>
-          </figcaption>
         </figure>
 
 
