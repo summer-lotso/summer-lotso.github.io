@@ -36,7 +36,7 @@
   padding: 18px 22px;
 }
 .wam-method-heading h3 { font-size: clamp(18px, 2vw, 24px); line-height: 1.4; }
-.wam-method-heading a, .wam-method-source a { color: var(--olive); text-decoration: underline; text-underline-offset: 3px; }
+.wam-method-heading a { color: var(--olive); text-decoration: underline; text-underline-offset: 3px; }
 .wam-method-heading a { font-size: 13px; }
 .wam-method-overview { display: block; padding: 0 6px; cursor: zoom-in; }
 .wam-method-figure img { width: 100%; height: auto; }
@@ -50,7 +50,6 @@
 .wam-method-panels h4 { margin-bottom: 6px; font-size: 15px; line-height: 1.5; }
 .wam-method-panels p { font-size: 14px; line-height: 1.75; }
 .wam-method-source { border-top: 1px solid var(--line); padding: 12px 22px; font-size: 12px; color: var(--muted); }
-.wam-method-source a { display: inline-block; }
 @media (max-width: 800px) {
   .wam-method-heading { padding: 16px; border-bottom: 1px solid var(--line); }
   .wam-method-overview { display: none; }
