@@ -64,8 +64,8 @@
         <div class="story-block"><div class="block-label">BEYOND OPENPI<span>新增与适配</span></div><div class="addition-grid"><section><span class="addition-no">01</span><h3>xArm7＋XHand1 数据与动作适配</h3><p>对齐三路 RGB、任务语言与臂手状态；提取 7＋12 维关节量，处理机械臂相对动作、手部绝对目标、归一化及模型维度补齐。</p></section><section><span class="addition-no">02</span><h3>未来视觉监督链路</h3><p>增加未来光流计算、视频注册与 LeRobot 读取路径；通过冻结 VAE、投影和注意力压缩，为 Teacher 构造未来视觉 tokens。</p></section><section><span class="addition-no">03</span><h3>双分支动作训练与蒸馏</h3><p>增加 Teacher action expert、Student queries 与特征投影器；联合动作流匹配和多层余弦蒸馏，以 attention mask 控制信息可见性。</p></section><section><span class="addition-no">04</span><h3>训练配置与评估工具</h3><p>接入四任务示教数据，完成 π₀、WAM 与 π₀.₅ 的统一训练与导出；整理初始化映射、四卡训练和部署包身份核对。</p></section></div></div>
 
         <figure class="wam-architecture-image" id="wam-method">
-          <a href="assets/wam/architecture-1117.webp" aria-label="放大查看 π₀ Latent WAM 架构图">
-            <img src="assets/wam/architecture-1117.webp" width="3836" height="1640" loading="lazy" decoding="async" alt="π₀ Latent WAM 的教师学生训练、未来视觉编码与学生策略部署架构。">
+          <a href="assets/wam/architecture-1117.png" aria-label="放大查看 π₀ Latent WAM 架构图">
+            <img src="assets/wam/architecture-1117.png" width="3836" height="1728" loading="lazy" decoding="async" alt="π₀ Latent WAM 的教师学生训练、未来视觉编码与学生策略部署架构。">
           </a>
         </figure>
 
