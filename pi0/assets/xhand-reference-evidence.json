@@ -1,0 +1,120 @@
+{
+  "description": "Existing XHand reference construction and selection experiments; no new training or evaluation for the portfolio update.",
+  "seed": 42,
+  "evaluation": {
+    "manifest": "train175",
+    "objects": 175,
+    "resets_per_object": 10,
+    "trials": 1750
+  },
+  "versions": [
+    {
+      "version": "v1",
+      "fixed_successes": 172,
+      "ppo_100_successes": 722,
+      "ppo_2000_successes": 1324,
+      "training_envs": 7000
+    },
+    {
+      "version": "v2 / jar",
+      "fixed_successes": 647,
+      "ppo_100_successes": 340,
+      "ppo_2000_successes": null,
+      "training_envs": 7000
+    },
+    {
+      "version": "v3 / potted meat can",
+      "fixed_successes": 549,
+      "ppo_100_successes": 765,
+      "ppo_2000_successes": 1423,
+      "training_envs_short": 7000,
+      "training_envs_final": 6000
+    }
+  ],
+  "collection": {
+    "rollouts": 7000,
+    "strict_pass_before_per_object_cap": 2229,
+    "saved_after_cap": 1457,
+    "deduplicated_candidates": 32,
+    "finalists": 4
+  },
+  "fixed_ranking": [
+    {
+      "rank": 1,
+      "candidate": "tennis_ball",
+      "successes": 666,
+      "success_rate": 0.38057142857142856
+    },
+    {
+      "rank": 2,
+      "candidate": "jar",
+      "successes": 647,
+      "success_rate": 0.3697142857142857
+    },
+    {
+      "rank": 3,
+      "candidate": "potted_meat_can",
+      "successes": 549,
+      "success_rate": 0.3137142857142857
+    },
+    {
+      "rank": 4,
+      "candidate": "horse",
+      "successes": 414,
+      "success_rate": 0.23657142857142857
+    }
+  ],
+  "stage10_ranking": [
+    {
+      "rank": 1,
+      "candidate": "horse",
+      "successes": 651,
+      "trials": 1750,
+      "success_rate": 0.372,
+      "checkpoint_sha256": "a89a881497c7038640dc445c2aa4d9636026888a09e9ca27116546338aa6cadb"
+    },
+    {
+      "rank": 2,
+      "candidate": "potted_meat_can",
+      "successes": 508,
+      "trials": 1750,
+      "success_rate": 0.29028571428571426,
+      "checkpoint_sha256": "90ed24a50498b87fe348e388d53735615178115e8cab99ad03c4fb2eebaacaa1"
+    },
+    {
+      "rank": 3,
+      "candidate": "tennis_ball",
+      "successes": 266,
+      "trials": 1750,
+      "success_rate": 0.152,
+      "checkpoint_sha256": "dd2c36a14eef0b4b910d9fb378a7fbe8fef9589ac7148ca226d05b922668803a"
+    },
+    {
+      "rank": 4,
+      "candidate": "jar",
+      "successes": 154,
+      "trials": 1750,
+      "success_rate": 0.088,
+      "checkpoint_sha256": "52e09f9e36561e91f9c375a836e8042e8cd0f69d9fd3a716e1ec183f7094f1a6",
+      "reused_frozen_result": true
+    }
+  ],
+  "selection_uses_unseen_objects": false,
+  "limitations": [
+    "Single training seed.",
+    "Final v3 uses 6000 environments / 12M episodes; v1 uses 7000 / 14M. Final difference is not a controlled reference-only ablation.",
+    "Online training success differs from deterministic formal evaluation."
+  ],
+  "training_curve": {
+    "run": "full_xhand_v3_seed42_restart2_iter2000",
+    "num_envs": 6000,
+    "iterations": 2000,
+    "csv": "xhand-v3-training.csv",
+    "tags": {
+      "success": "Train/current_success_rate",
+      "noise_std": "Policy/mean_noise_std",
+      "value_loss": "Loss/value_function",
+      "surrogate_loss": "Loss/surrogate"
+    }
+  }
+}

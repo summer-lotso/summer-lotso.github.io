@@ -1,0 +1,95 @@
+{
+  "title": "Historical PPO evaluation — reward v6",
+  "embodiment": "UR10e + Shadow Hand",
+  "checkpoint_label": "human_like_158d_reward_v6 / model_1150",
+  "training_date": "2026-06-30",
+  "protocol": {
+    "deterministic": true,
+    "episodes": 5,
+    "max_steps_per_episode": 300,
+    "domain": "simulation"
+  },
+  "summary": {
+    "num_episodes": 5,
+    "reach_success_rate": 1.0,
+    "lift_success_rate": 0.0,
+    "grasp_success_rate": 0.0,
+    "human_like_grasp_success_rate": 0.0,
+    "stable_success_rate": 0.0,
+    "mean_max_object_height": 0.000975489616394043,
+    "mean_max_fingertip_contacts": 2.0,
+    "mean_max_long_finger_contacts": 1.0,
+    "mean_palm_facing_object_alignment": 0.9503924373785655
+  },
+  "episodes": [
+    {
+      "episode": 0,
+      "steps": 300,
+      "reach_success": true,
+      "lift_success": false,
+      "grasp_success": false,
+      "human_like_grasp_success": false,
+      "max_fingertip_contacts": 2.0,
+      "max_long_finger_contacts": 1.0
+    },
+    {
+      "episode": 1,
+      "steps": 300,
+      "reach_success": true,
+      "lift_success": false,
+      "grasp_success": false,
+      "human_like_grasp_success": false,
+      "max_fingertip_contacts": 2.0,
+      "max_long_finger_contacts": 1.0
+    },
+    {
+      "episode": 2,
+      "steps": 300,
+      "reach_success": true,
+      "lift_success": false,
+      "grasp_success": false,
+      "human_like_grasp_success": false,
+      "max_fingertip_contacts": 2.0,
+      "max_long_finger_contacts": 1.0
+    },
+    {
+      "episode": 3,
+      "steps": 300,
+      "reach_success": true,
+      "lift_success": false,
+      "grasp_success": false,
+      "human_like_grasp_success": false,
+      "max_fingertip_contacts": 2.0,
+      "max_long_finger_contacts": 1.0
+    },
+    {
+      "episode": 4,
+      "steps": 300,
+      "reach_success": true,
+      "lift_success": false,
+      "grasp_success": false,
+      "human_like_grasp_success": false,
+      "max_fingertip_contacts": 2.0,
+      "max_long_finger_contacts": 1.0
+    }
+  ],
+  "interpretation": "Reached the object in all five trials; no lift or qualified grasp under this protocol. These are historical evaluation results, separate from any newly recorded diagnostic replay.",
+  "diagnostic_replay": {
+    "recorded_on": "2026-10-23",
+    "purpose": "Historical checkpoint in the current environment; not the original evaluation recording",
+    "historical_environment_exactly_recovered": false,
+    "episodes": 1,
+    "max_steps": 300,
+    "playback_rate": 0.5,
+    "training": false,
+    "summary": {
+      "num_episodes": 1,
+      "reach_success_rate": 1.0,
+      "lift_success_rate": 1.0,
+      "grasp_success_rate": 0.0,
+      "human_like_grasp_success_rate": 0.0,
+      "stable_success_rate": 0.0,
+      "mean_max_object_height": 0.04147970676422119
+    }
+  }
+}
