@@ -2,7 +2,7 @@
   "schema": "portfolio.wam.bottom-evaluation.v1",
   "date": "2026-10-31",
   "task": "Place the bottle upright on the bottom shelf.",
-  "scope": "bottom_place_only",
+  "scope": "bottom_place_only_wam_pi05_comparison",
   "groups": [
     {
       "condition": "original",
@@ -131,70 +131,6 @@
         }
       },
       "model_display": "WAM"
-    },
-    {
-      "condition": "original",
-      "model": "pi05",
-      "success": 2,
-      "executed": 5,
-      "planned": 20,
-      "rate": 0.4,
-      "nominal_wilson95": [
-        0.11762077423264783,
-        0.769275718723987
-      ],
-      "responses": 304,
-      "latency_ms": {
-        "service_ms": {
-          "n": 304,
-          "mean": 258.1857016182432,
-          "sd": 10.84974774230857,
-          "min": 179.9120329960715,
-          "p25": 255.46887124983186,
-          "median": 259.7640690000844,
-          "p75": 262.866851502622,
-          "p95": 265.78803620104736,
-          "p99": 267.434435969044,
-          "max": 292.08086500148056
-        },
-        "rpc_ms": {
-          "n": 304,
-          "mean": 267.6427613387444,
-          "sd": 11.478157425337326,
-          "min": 188.269059995946,
-          "p25": 262.7793102474243,
-          "median": 270.68412199878367,
-          "p75": 273.673852747379,
-          "p95": 276.9526090542058,
-          "p99": 279.4029928032978,
-          "max": 307.64703699969687
-        },
-        "assembly_ms": {
-          "n": 304,
-          "mean": 279.54266294732645,
-          "sd": 12.740711156374276,
-          "min": 200.4103959989152,
-          "p25": 271.74352725160134,
-          "median": 283.3433305058861,
-          "p75": 287.3324637475889,
-          "p95": 290.9746733530483,
-          "p99": 294.7925364092225,
-          "max": 329.11204699485097
-        },
-        "arrival_to_response_ms": {
-          "n": 912,
-          "mean": 295.0098179418299,
-          "sd": 16.12713504914551,
-          "min": 201.47014100075467,
-          "p25": 286.5365262496198,
-          "median": 295.9449105001113,
-          "p75": 305.2119012463663,
-          "p95": 316.06634170275356,
-          "p99": 323.45311268465593,
-          "max": 356.52387799927965
-        }
-      },
-      "model_display": "π₀.₅（g1 参考）"
     },
     {
       "condition": "replacement",
@@ -627,66 +563,6 @@
       "model_display": "WAM"
     },
     {
-      "trial_no": 21,
-      "trial_id": "b6f7acdfe53e4442",
-      "condition": "original",
-      "model": "pi05",
-      "outcome": "success",
-      "reason": "操作者确认自主完成、释放并稳定至少3秒，无人工辅助。",
-      "failure_stage_from_original_note": "not_applicable",
-      "operator_stop_s": 44.292203655000776,
-      "successful_operator_confirmation_s": 44.292203655000776,
-      "rpc_mean_ms": 271.9056202081952,
-      "rpc_p95_ms": 276.07589639737853,
-      "max_hand_target_projection_rad": 0.09762794543039703,
-      "model_display": "π₀.₅（g1 参考）"
-    },
-    {
-      "trial_no": 22,
-      "trial_id": "4686fd3f443e4ec7",
-      "condition": "original",
-      "model": "pi05",
-      "outcome": "success",
-      "reason": "操作者确认自主完成、释放并稳定至少3秒，无人工辅助。",
-      "failure_stage_from_original_note": "not_applicable",
-      "operator_stop_s": 42.809979347999615,
-      "successful_operator_confirmation_s": 42.809979347999615,
-      "rpc_mean_ms": 274.4315099130356,
-      "rpc_p95_ms": 278.760068603151,
-      "max_hand_target_projection_rad": 0.0790283461612108,
-      "model_display": "π₀.₅（g1 参考）"
-    },
-    {
-      "trial_no": 23,
-      "trial_id": "bf1f7b7fa679443f",
-      "condition": "original",
-      "model": "pi05",
-      "outcome": "failure",
-      "reason": "操作者标记失败，抓取失败，瓶子倒了",
-      "failure_stage_from_original_note": "grasp",
-      "operator_stop_s": 54.063653971999884,
-      "successful_operator_confirmation_s": null,
-      "rpc_mean_ms": 261.88268291848226,
-      "rpc_p95_ms": 266.50591524594347,
-      "max_hand_target_projection_rad": 0.08342709398220276,
-      "model_display": "π₀.₅（g1 参考）"
-    },
-    {
-      "trial_no": 24,
-      "trial_id": "ecfc10623c9b495d",
-      "condition": "original",
-      "model": "pi05",
-      "outcome": "failure",
-      "reason": "操作者标记失败，结束后补充阶段与原因。",
-      "failure_stage_from_original_note": "unannotated",
-      "operator_stop_s": 27.38287647600373,
-      "successful_operator_confirmation_s": null,
-      "rpc_mean_ms": 268.74109439559953,
-      "rpc_p95_ms": 274.9177969999437,
-      "max_hand_target_projection_rad": 0.09668648423282093,
-      "model_display": "π₀.₅（g1 参考）"
-    },
-    {
       "trial_no": 25,
       "trial_id": "a5577b6becbf4528",
       "condition": "original",
@@ -835,21 +711,6 @@
       "rpc_p95_ms": 256.07912499981467,
       "max_hand_target_projection_rad": 0.015922672787008207,
       "model_display": "π₀.₅"
-    },
-    {
-      "trial_no": 35,
-      "trial_id": "8540e5f925f94845",
-      "condition": "original",
-      "model": "pi05",
-      "outcome": "failure",
-      "reason": "操作者标记失败，抓取失败，瓶子倒了",
-      "failure_stage_from_original_note": "grasp",
-      "operator_stop_s": 21.638522032000765,
-      "successful_operator_confirmation_s": null,
-      "rpc_mean_ms": 258.0189064114272,
-      "rpc_p95_ms": 263.4646961978433,
-      "max_hand_target_projection_rad": 0.09878324461339819,
-      "model_display": "π₀.₅（g1 参考）"
     },
     {
       "trial_no": 36,
@@ -1303,22 +1164,14 @@
     }
   ],
   "main_counts": {
-    "executed": 65,
-    "success": 55,
-    "failure": 10
+    "executed": 60,
+    "success": 53,
+    "failure": 7
   },
   "failure_notes": {
-    "grasp": 4,
     "place": 3,
-    "unannotated": 3
-  },
-  "auxiliary": {
-    "pi05_g10": {
-      "executed": 3,
-      "raw_success": 0,
-      "no_plan_abort": 1,
-      "pooled": false
-    }
+    "grasp": 2,
+    "unannotated": 2
   },
   "replacement_support": {
     "seen": true,
@@ -1326,17 +1179,9 @@
     "total_training_episodes": 100,
     "bottom_task_cross_count": "not_audited"
   },
-  "audit": {
-    "original_source_hashes": 689,
-    "decoded_rgb_images": 12204,
-    "raw_action_plans": 4034,
-    "integrity_checks_passed": 26,
-    "coverage": "Main 65 plus separate auxiliary 3"
-  },
   "limitations": [
     "Single training seed42",
     "Nonrandom model/session blocks",
-    "Pi05 stopped after observing results",
     "No held-out episode validation",
     "No independent full no-contact certification",
     "No causal or component ablation claim"
@@ -1376,8 +1221,7 @@
     "confirmed_by": "project owner",
     "labels": {
       "pi0": "π₀.₅",
-      "pi0_latent_wam": "WAM",
-      "pi05": "π₀.₅（g1 参考）"
+      "pi0_latent_wam": "WAM"
     },
     "note": "Archived model identifiers are preserved; model_display gives the corrected public model label. Outcomes and measurements are preserved."
   }

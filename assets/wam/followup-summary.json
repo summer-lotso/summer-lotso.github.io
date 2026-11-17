@@ -92,8 +92,7 @@
     "confirmed_by": "project owner",
     "labels": {
       "pi0": "π₀.₅",
-      "pi0_latent_wam": "WAM",
-      "pi05": "π₀.₅（g1 参考）"
+      "pi0_latent_wam": "WAM"
     },
     "note": "Archived model identifiers are preserved; model_display gives the corrected public model label. Outcomes and measurements are preserved."
   }
